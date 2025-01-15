@@ -1,0 +1,342 @@
+[
+    {
+        "id": "de2294f4-e811-4f46-b718-50c063f8b020",
+        "name": "test_HvsW.mp4",
+        "status": "approved",
+        "externalStatus": "approved",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/test_HvsW.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVF23R7SQD%2F20250110%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250110T043937Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkcwRQIhAIR%2FmfkCrmyUsYVpubaylY9W73DzL9LQ6Cb%2FEyHjGUm9AiAxu9gWyWiFwkERx8LuCemAyafzq9RcCA1q9ewSab%2FTHCqJBAid%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDU5NTM0Mzg0Njc2MiIMpfNnUDnnisj1E7avKt0DbqtaMrEXz49WowOVz%2BMrmXPC7rzDYVWQ1bfXgaB8W65yq0dd9xdJF2IsB5mnhaOtYkmjnkF9EX%2B3BedGJ5sWKztGd6r%2F41gEULYS%2FKaTuhfnMuhW0yMPV9hEAkTTeSXjSUhfL0dx1tCpBo8IUnWD%2F8Lv76fqtLZLVrpnI9Mxr6btbjq2d%2Fj3iVQXdfsEvlAweKsk3DLBOr6jQpxBFw4ow1Kj2XwVpwjyZITrygfrcSB4DFnjTh0jO0FbtYuPk87EeI%2Fv9M7hKtU4wXmmGrbWqSffCwo51EQ0mAZd4ThLI7iR0OMvq80y6tlSaTjN197Cb7FVsZ8rhEjXJDRRXHu6VO1ntXTVMFPzkkS7CZ0GnzbrQ4cGFNKvUGAw65P1u14zdRGp5CNPypBxhNdP5maflkYxwxtp0NV%2FPDfpMZg6kip24fnDeN6CTzCxTcNSYiPMRM1E9uRJfn04o6KMD7mbSIT6wSVjIXPf3KyViih7eeYlnuWXl83AsWOjG1FqVEYGFAx1nzhlkbBApsVpPGVL3BxhV8dZBcFV7TSKGR%2Fv7L4kyaY8Vm%2B%2F3%2BPbEyH6vFgC5dGdEZA8ESmatAaUeGxhJqyhWOR4KLU%2B%2BvtltOQqKthGppX1Kd1H7rfU657mML61grwGOqUBpsSqjQxRGaBJF3ohnc831Jdyioi901dtFXv5ldkTErQ8CfRmOP6a%2Bp2pCzmQ52zMwgzU0whJ2O2OqgM7YPVz8MDSxPDkP1dWzGugQ4s13ZD5zFgTfEIaK9ncNOlglXBu4qCJKwzBzE8GA7Bq0m68N52dXwMCDtsrewr3zNjHQYBC5EP6GvvSAgyj6EYV4rRXO2GrP%2FlSIpmj6cdqAy9z6XgdCCSJ&X-Amz-Signature=367b454843abfdb48d06ddd3606ce81fb130c76203f6998d9e625acb6b97c0ee",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 6231,
+        "duration": 207.9077,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": [
+                    [
+                        2476,
+                        2578
+                    ]
+                ]
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        334,
+                        488
+                    ],
+                    [
+                        715,
+                        916
+                    ],
+                    [
+                        1919,
+                        2042
+                    ],
+                    [
+                        2766,
+                        2931
+                    ],
+                    [
+                        4059,
+                        4203
+                    ],
+                    [
+                        5429,
+                        5568
+                    ],
+                    [
+                        6056,
+                        6219
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "hibiya0226",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2025-01-10T13:14:30.897099",
+        "updatedAt": "2025-01-10T13:38:51"
+    },
+    {
+        "id": "17a31028-e2e6-4c3b-9b71-1009399c84e9",
+        "name": "test_KvsW.mp4",
+        "status": "approved",
+        "externalStatus": "approved",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/test_KvsW.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVF23R7SQD%2F20250110%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250110T043937Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkcwRQIhAIR%2FmfkCrmyUsYVpubaylY9W73DzL9LQ6Cb%2FEyHjGUm9AiAxu9gWyWiFwkERx8LuCemAyafzq9RcCA1q9ewSab%2FTHCqJBAid%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDU5NTM0Mzg0Njc2MiIMpfNnUDnnisj1E7avKt0DbqtaMrEXz49WowOVz%2BMrmXPC7rzDYVWQ1bfXgaB8W65yq0dd9xdJF2IsB5mnhaOtYkmjnkF9EX%2B3BedGJ5sWKztGd6r%2F41gEULYS%2FKaTuhfnMuhW0yMPV9hEAkTTeSXjSUhfL0dx1tCpBo8IUnWD%2F8Lv76fqtLZLVrpnI9Mxr6btbjq2d%2Fj3iVQXdfsEvlAweKsk3DLBOr6jQpxBFw4ow1Kj2XwVpwjyZITrygfrcSB4DFnjTh0jO0FbtYuPk87EeI%2Fv9M7hKtU4wXmmGrbWqSffCwo51EQ0mAZd4ThLI7iR0OMvq80y6tlSaTjN197Cb7FVsZ8rhEjXJDRRXHu6VO1ntXTVMFPzkkS7CZ0GnzbrQ4cGFNKvUGAw65P1u14zdRGp5CNPypBxhNdP5maflkYxwxtp0NV%2FPDfpMZg6kip24fnDeN6CTzCxTcNSYiPMRM1E9uRJfn04o6KMD7mbSIT6wSVjIXPf3KyViih7eeYlnuWXl83AsWOjG1FqVEYGFAx1nzhlkbBApsVpPGVL3BxhV8dZBcFV7TSKGR%2Fv7L4kyaY8Vm%2B%2F3%2BPbEyH6vFgC5dGdEZA8ESmatAaUeGxhJqyhWOR4KLU%2B%2BvtltOQqKthGppX1Kd1H7rfU657mML61grwGOqUBpsSqjQxRGaBJF3ohnc831Jdyioi901dtFXv5ldkTErQ8CfRmOP6a%2Bp2pCzmQ52zMwgzU0whJ2O2OqgM7YPVz8MDSxPDkP1dWzGugQ4s13ZD5zFgTfEIaK9ncNOlglXBu4qCJKwzBzE8GA7Bq0m68N52dXwMCDtsrewr3zNjHQYBC5EP6GvvSAgyj6EYV4rRXO2GrP%2FlSIpmj6cdqAy9z6XgdCCSJ&X-Amz-Signature=d5be60d53b25e4a3d85950b1b6da33852a73445eb1908f6a92bcba190bd7eec6",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 2891,
+        "duration": 96.4630333333,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        213,
+                        363
+                    ],
+                    [
+                        539,
+                        677
+                    ],
+                    [
+                        838,
+                        970
+                    ],
+                    [
+                        1658,
+                        1918
+                    ],
+                    [
+                        2044,
+                        2204
+                    ],
+                    [
+                        2532,
+                        2711
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "hibiya0226",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2025-01-10T13:14:30.883147",
+        "updatedAt": "2025-01-10T13:38:54"
+    },
+    {
+        "id": "5d752250-654e-42ef-b893-f318a07327d8",
+        "name": "test_tachikawa.mp4",
+        "status": "approved",
+        "externalStatus": "approved",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/test_tachikawa.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVF23R7SQD%2F20250110%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250110T043937Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkcwRQIhAIR%2FmfkCrmyUsYVpubaylY9W73DzL9LQ6Cb%2FEyHjGUm9AiAxu9gWyWiFwkERx8LuCemAyafzq9RcCA1q9ewSab%2FTHCqJBAid%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDU5NTM0Mzg0Njc2MiIMpfNnUDnnisj1E7avKt0DbqtaMrEXz49WowOVz%2BMrmXPC7rzDYVWQ1bfXgaB8W65yq0dd9xdJF2IsB5mnhaOtYkmjnkF9EX%2B3BedGJ5sWKztGd6r%2F41gEULYS%2FKaTuhfnMuhW0yMPV9hEAkTTeSXjSUhfL0dx1tCpBo8IUnWD%2F8Lv76fqtLZLVrpnI9Mxr6btbjq2d%2Fj3iVQXdfsEvlAweKsk3DLBOr6jQpxBFw4ow1Kj2XwVpwjyZITrygfrcSB4DFnjTh0jO0FbtYuPk87EeI%2Fv9M7hKtU4wXmmGrbWqSffCwo51EQ0mAZd4ThLI7iR0OMvq80y6tlSaTjN197Cb7FVsZ8rhEjXJDRRXHu6VO1ntXTVMFPzkkS7CZ0GnzbrQ4cGFNKvUGAw65P1u14zdRGp5CNPypBxhNdP5maflkYxwxtp0NV%2FPDfpMZg6kip24fnDeN6CTzCxTcNSYiPMRM1E9uRJfn04o6KMD7mbSIT6wSVjIXPf3KyViih7eeYlnuWXl83AsWOjG1FqVEYGFAx1nzhlkbBApsVpPGVL3BxhV8dZBcFV7TSKGR%2Fv7L4kyaY8Vm%2B%2F3%2BPbEyH6vFgC5dGdEZA8ESmatAaUeGxhJqyhWOR4KLU%2B%2BvtltOQqKthGppX1Kd1H7rfU657mML61grwGOqUBpsSqjQxRGaBJF3ohnc831Jdyioi901dtFXv5ldkTErQ8CfRmOP6a%2Bp2pCzmQ52zMwgzU0whJ2O2OqgM7YPVz8MDSxPDkP1dWzGugQ4s13ZD5zFgTfEIaK9ncNOlglXBu4qCJKwzBzE8GA7Bq0m68N52dXwMCDtsrewr3zNjHQYBC5EP6GvvSAgyj6EYV4rRXO2GrP%2FlSIpmj6cdqAy9z6XgdCCSJ&X-Amz-Signature=e4d0bcfd311f2d2be6a60d33fdf212750dc41fdf8f1f8239c18363193ebc2402",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 4955,
+        "duration": 165.3318333333,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        51,
+                        189
+                    ],
+                    [
+                        558,
+                        697
+                    ],
+                    [
+                        1403,
+                        1559
+                    ],
+                    [
+                        1725,
+                        1855
+                    ],
+                    [
+                        2189,
+                        2382
+                    ],
+                    [
+                        3362,
+                        3524
+                    ],
+                    [
+                        4481,
+                        4663
+                    ]
+                ]
+            },
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "hibiya0226",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2025-01-10T13:14:30.866586",
+        "updatedAt": "2025-01-10T13:38:56"
+    },
+    {
+        "id": "82be6d82-1e6a-458d-bf9c-790ffa59718d",
+        "name": "test_Yasuda.mp4",
+        "status": "approved",
+        "externalStatus": "approved",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/test_Yasuda.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVF23R7SQD%2F20250110%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250110T043937Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkcwRQIhAIR%2FmfkCrmyUsYVpubaylY9W73DzL9LQ6Cb%2FEyHjGUm9AiAxu9gWyWiFwkERx8LuCemAyafzq9RcCA1q9ewSab%2FTHCqJBAid%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDU5NTM0Mzg0Njc2MiIMpfNnUDnnisj1E7avKt0DbqtaMrEXz49WowOVz%2BMrmXPC7rzDYVWQ1bfXgaB8W65yq0dd9xdJF2IsB5mnhaOtYkmjnkF9EX%2B3BedGJ5sWKztGd6r%2F41gEULYS%2FKaTuhfnMuhW0yMPV9hEAkTTeSXjSUhfL0dx1tCpBo8IUnWD%2F8Lv76fqtLZLVrpnI9Mxr6btbjq2d%2Fj3iVQXdfsEvlAweKsk3DLBOr6jQpxBFw4ow1Kj2XwVpwjyZITrygfrcSB4DFnjTh0jO0FbtYuPk87EeI%2Fv9M7hKtU4wXmmGrbWqSffCwo51EQ0mAZd4ThLI7iR0OMvq80y6tlSaTjN197Cb7FVsZ8rhEjXJDRRXHu6VO1ntXTVMFPzkkS7CZ0GnzbrQ4cGFNKvUGAw65P1u14zdRGp5CNPypBxhNdP5maflkYxwxtp0NV%2FPDfpMZg6kip24fnDeN6CTzCxTcNSYiPMRM1E9uRJfn04o6KMD7mbSIT6wSVjIXPf3KyViih7eeYlnuWXl83AsWOjG1FqVEYGFAx1nzhlkbBApsVpPGVL3BxhV8dZBcFV7TSKGR%2Fv7L4kyaY8Vm%2B%2F3%2BPbEyH6vFgC5dGdEZA8ESmatAaUeGxhJqyhWOR4KLU%2B%2BvtltOQqKthGppX1Kd1H7rfU657mML61grwGOqUBpsSqjQxRGaBJF3ohnc831Jdyioi901dtFXv5ldkTErQ8CfRmOP6a%2Bp2pCzmQ52zMwgzU0whJ2O2OqgM7YPVz8MDSxPDkP1dWzGugQ4s13ZD5zFgTfEIaK9ncNOlglXBu4qCJKwzBzE8GA7Bq0m68N52dXwMCDtsrewr3zNjHQYBC5EP6GvvSAgyj6EYV4rRXO2GrP%2FlSIpmj6cdqAy9z6XgdCCSJ&X-Amz-Signature=f8470423561bda32089acc82de9da54009794c74a1b096a8fd6ffad3071d84db",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 4834,
+        "duration": 161.2944666667,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        34,
+                        196
+                    ],
+                    [
+                        480,
+                        618
+                    ],
+                    [
+                        948,
+                        1089
+                    ],
+                    [
+                        1434,
+                        1641
+                    ],
+                    [
+                        2212,
+                        2425
+                    ],
+                    [
+                        3134,
+                        3261
+                    ],
+                    [
+                        3747,
+                        3941
+                    ],
+                    [
+                        4267,
+                        4447
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "hibiya0226",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2025-01-10T13:14:30.875242",
+        "updatedAt": "2025-01-10T13:38:59"
+    },
+    {
+        "id": "1f6cde60-9089-4bca-b381-69b0c200c2a9",
+        "name": "test_Yokosuka.mp4",
+        "status": "approved",
+        "externalStatus": "approved",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/test_Yokosuka.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVF23R7SQD%2F20250110%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250110T043937Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0xIkcwRQIhAIR%2FmfkCrmyUsYVpubaylY9W73DzL9LQ6Cb%2FEyHjGUm9AiAxu9gWyWiFwkERx8LuCemAyafzq9RcCA1q9ewSab%2FTHCqJBAid%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDU5NTM0Mzg0Njc2MiIMpfNnUDnnisj1E7avKt0DbqtaMrEXz49WowOVz%2BMrmXPC7rzDYVWQ1bfXgaB8W65yq0dd9xdJF2IsB5mnhaOtYkmjnkF9EX%2B3BedGJ5sWKztGd6r%2F41gEULYS%2FKaTuhfnMuhW0yMPV9hEAkTTeSXjSUhfL0dx1tCpBo8IUnWD%2F8Lv76fqtLZLVrpnI9Mxr6btbjq2d%2Fj3iVQXdfsEvlAweKsk3DLBOr6jQpxBFw4ow1Kj2XwVpwjyZITrygfrcSB4DFnjTh0jO0FbtYuPk87EeI%2Fv9M7hKtU4wXmmGrbWqSffCwo51EQ0mAZd4ThLI7iR0OMvq80y6tlSaTjN197Cb7FVsZ8rhEjXJDRRXHu6VO1ntXTVMFPzkkS7CZ0GnzbrQ4cGFNKvUGAw65P1u14zdRGp5CNPypBxhNdP5maflkYxwxtp0NV%2FPDfpMZg6kip24fnDeN6CTzCxTcNSYiPMRM1E9uRJfn04o6KMD7mbSIT6wSVjIXPf3KyViih7eeYlnuWXl83AsWOjG1FqVEYGFAx1nzhlkbBApsVpPGVL3BxhV8dZBcFV7TSKGR%2Fv7L4kyaY8Vm%2B%2F3%2BPbEyH6vFgC5dGdEZA8ESmatAaUeGxhJqyhWOR4KLU%2B%2BvtltOQqKthGppX1Kd1H7rfU657mML61grwGOqUBpsSqjQxRGaBJF3ohnc831Jdyioi901dtFXv5ldkTErQ8CfRmOP6a%2Bp2pCzmQ52zMwgzU0whJ2O2OqgM7YPVz8MDSxPDkP1dWzGugQ4s13ZD5zFgTfEIaK9ncNOlglXBu4qCJKwzBzE8GA7Bq0m68N52dXwMCDtsrewr3zNjHQYBC5EP6GvvSAgyj6EYV4rRXO2GrP%2FlSIpmj6cdqAy9z6XgdCCSJ&X-Amz-Signature=f34d2ac51385c15a5a9d8e93c8a9dfcf7ead5a4e8d34076abfd215461e1720a7",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 5248,
+        "duration": 175.1082666667,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        550,
+                        866
+                    ],
+                    [
+                        1138,
+                        1367
+                    ],
+                    [
+                        1571,
+                        1756
+                    ],
+                    [
+                        2131,
+                        2384
+                    ],
+                    [
+                        2660,
+                        2912
+                    ],
+                    [
+                        4252,
+                        4406
+                    ],
+                    [
+                        4946,
+                        5115
+                    ]
+                ]
+            },
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "hibiya0226",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2025-01-10T13:14:30.891651",
+        "updatedAt": "2025-01-10T13:39:01"
+    }
+]

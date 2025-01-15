@@ -1,0 +1,1218 @@
+[
+    {
+        "id": "060d0b30-e5be-44b9-b67e-b9a43b8298d6",
+        "name": "アノテーション.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/%E3%82%A2%E3%83%8E%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=eb510f3127cd41e2b23d959462682e9c5ef4d7c91fc197cb9c5d6ffa1bd4d867",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 22229,
+        "duration": 741.7076333333,
+        "secondsToAnnotate": 1090,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        416,
+                        484
+                    ],
+                    [
+                        754,
+                        821
+                    ],
+                    [
+                        1262,
+                        1399
+                    ],
+                    [
+                        1706,
+                        1800
+                    ],
+                    [
+                        2143,
+                        2270
+                    ],
+                    [
+                        2625,
+                        2733
+                    ],
+                    [
+                        3668,
+                        3823
+                    ],
+                    [
+                        4437,
+                        4553
+                    ],
+                    [
+                        5378,
+                        5465
+                    ],
+                    [
+                        6379,
+                        6446
+                    ],
+                    [
+                        7667,
+                        7858
+                    ],
+                    [
+                        8913,
+                        9109
+                    ],
+                    [
+                        9666,
+                        9814
+                    ],
+                    [
+                        10706,
+                        10866
+                    ],
+                    [
+                        11428,
+                        11593
+                    ],
+                    [
+                        12296,
+                        12375
+                    ],
+                    [
+                        13244,
+                        13389
+                    ],
+                    [
+                        14120,
+                        14297
+                    ],
+                    [
+                        15060,
+                        15187
+                    ],
+                    [
+                        16118,
+                        16278
+                    ],
+                    [
+                        16923,
+                        17066
+                    ],
+                    [
+                        18371,
+                        18484
+                    ],
+                    [
+                        19322,
+                        19504
+                    ],
+                    [
+                        20413,
+                        20571
+                    ],
+                    [
+                        21944,
+                        22072
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "hibiya0226",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-09-26T22:50:02.367151",
+        "updatedAt": "2025-01-04T16:55:05"
+    },
+    {
+        "id": "d0412bc1-13b3-422e-b1c4-9ed8c34f41b1",
+        "name": "MvsW_1.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/MvsW_1.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=2679dd8dabff419b8cc590e8a5894354957b158ab5aa3a7704472c3932611b16",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 11055,
+        "duration": 368.8685,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        96,
+                        252
+                    ],
+                    [
+                        430,
+                        576
+                    ],
+                    [
+                        798,
+                        924
+                    ],
+                    [
+                        1163,
+                        1337
+                    ],
+                    [
+                        1562,
+                        1715
+                    ],
+                    [
+                        1915,
+                        2010
+                    ],
+                    [
+                        2687,
+                        2875
+                    ],
+                    [
+                        3055,
+                        3223
+                    ],
+                    [
+                        3554,
+                        3730
+                    ],
+                    [
+                        3970,
+                        4172
+                    ],
+                    [
+                        4598,
+                        4797
+                    ],
+                    [
+                        5148,
+                        5378
+                    ],
+                    [
+                        5778,
+                        5969
+                    ],
+                    [
+                        6372,
+                        6553
+                    ],
+                    [
+                        7306,
+                        7501
+                    ],
+                    [
+                        7659,
+                        7836
+                    ],
+                    [
+                        8130,
+                        8330
+                    ],
+                    [
+                        8536,
+                        8763
+                    ],
+                    [
+                        9446,
+                        9656
+                    ],
+                    [
+                        9803,
+                        9992
+                    ],
+                    [
+                        10202,
+                        10423
+                    ],
+                    [
+                        10712,
+                        10956
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-11-12T22:04:23.135415",
+        "updatedAt": "2025-01-04T16:54:10"
+    },
+    {
+        "id": "659061c6-97f2-4a58-8a8a-f1fc8e06a91b",
+        "name": "MvsW_2.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/MvsW_2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=b3b49c16bf3dcbe1b1b86545289e93fa6c031829951a05e3cab57cc8251be566",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 24270,
+        "duration": 809.809,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": [
+                    [
+                        9235,
+                        9379
+                    ],
+                    [
+                        13932,
+                        14127
+                    ]
+                ]
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        752,
+                        891
+                    ],
+                    [
+                        1085,
+                        1229
+                    ],
+                    [
+                        1503,
+                        1644
+                    ],
+                    [
+                        1894,
+                        2037
+                    ],
+                    [
+                        2361,
+                        2478
+                    ],
+                    [
+                        2891,
+                        3053
+                    ],
+                    [
+                        3495,
+                        3629
+                    ],
+                    [
+                        3884,
+                        4017
+                    ],
+                    [
+                        4680,
+                        4810
+                    ],
+                    [
+                        4987,
+                        5109
+                    ],
+                    [
+                        5299,
+                        5425
+                    ],
+                    [
+                        5631,
+                        5791
+                    ],
+                    [
+                        5999,
+                        6129
+                    ],
+                    [
+                        6443,
+                        6588
+                    ],
+                    [
+                        8066,
+                        8229
+                    ],
+                    [
+                        8624,
+                        8774
+                    ],
+                    [
+                        9868,
+                        10004
+                    ],
+                    [
+                        10522,
+                        10666
+                    ],
+                    [
+                        12009,
+                        12184
+                    ],
+                    [
+                        12556,
+                        12693
+                    ],
+                    [
+                        13237,
+                        13405
+                    ],
+                    [
+                        14643,
+                        14788
+                    ],
+                    [
+                        16068,
+                        16190
+                    ],
+                    [
+                        16420,
+                        16569
+                    ],
+                    [
+                        16972,
+                        17106
+                    ],
+                    [
+                        17583,
+                        17722
+                    ],
+                    [
+                        17905,
+                        18082
+                    ],
+                    [
+                        18917,
+                        19061
+                    ],
+                    [
+                        19270,
+                        19392
+                    ],
+                    [
+                        20112,
+                        20332
+                    ],
+                    [
+                        20758,
+                        20909
+                    ],
+                    [
+                        21733,
+                        21879
+                    ],
+                    [
+                        22357,
+                        22486
+                    ],
+                    [
+                        23188,
+                        23340
+                    ],
+                    [
+                        23944,
+                        24075
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-11-12T22:04:23.143066",
+        "updatedAt": "2025-01-04T16:54:14"
+    },
+    {
+        "id": "952b98bc-f9f9-4c8f-af3b-d34ef88ba90e",
+        "name": "MvsW_3.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/MvsW_3.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=ee8d23f003f6894c260991adb7d6efa06123f8e421eda7430bc824afe5467e9d",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 13230,
+        "duration": 441.441,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        51,
+                        174
+                    ],
+                    [
+                        779,
+                        923
+                    ],
+                    [
+                        1415,
+                        1564
+                    ],
+                    [
+                        2792,
+                        2965
+                    ],
+                    [
+                        3217,
+                        3364
+                    ],
+                    [
+                        3722,
+                        3891
+                    ],
+                    [
+                        4242,
+                        4427
+                    ],
+                    [
+                        5576,
+                        5726
+                    ],
+                    [
+                        6092,
+                        6230
+                    ],
+                    [
+                        6585,
+                        6808
+                    ],
+                    [
+                        7196,
+                        7332
+                    ],
+                    [
+                        7916,
+                        8062
+                    ],
+                    [
+                        9255,
+                        9420
+                    ],
+                    [
+                        10373,
+                        10536
+                    ],
+                    [
+                        11113,
+                        11273
+                    ],
+                    [
+                        11856,
+                        12035
+                    ],
+                    [
+                        12817,
+                        12971
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-11-12T22:04:23.150064",
+        "updatedAt": "2025-01-04T16:54:17"
+    },
+    {
+        "id": "e0b2d5b5-f803-43d5-80df-a501b20cd69b",
+        "name": "MvsW_4.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/MvsW_4.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=8ba86c49f0fa946bfceddde93b14543f960465a9f67267b2f1d7422c8cedb522",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 5385,
+        "duration": 179.6795,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        682,
+                        838
+                    ],
+                    [
+                        1063,
+                        1211
+                    ],
+                    [
+                        1419,
+                        1605
+                    ],
+                    [
+                        2338,
+                        2497
+                    ],
+                    [
+                        2702,
+                        2899
+                    ],
+                    [
+                        3756,
+                        3960
+                    ],
+                    [
+                        4094,
+                        4275
+                    ],
+                    [
+                        4486,
+                        4732
+                    ],
+                    [
+                        4856,
+                        5085
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-11-12T22:04:23.126201",
+        "updatedAt": "2025-01-04T16:54:19"
+    },
+    {
+        "id": "867c9f6a-f56d-48fc-a1b3-27766836172c",
+        "name": "MvsW_5.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/MvsW_5.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=c2ab875b667e975b3d8af11f23305550086c2c6d68f20d9afbe3b980c26b97fb",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 19545,
+        "duration": 652.1515,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        437,
+                        605
+                    ],
+                    [
+                        743,
+                        881
+                    ],
+                    [
+                        1023,
+                        1187
+                    ],
+                    [
+                        1594,
+                        1748
+                    ],
+                    [
+                        2403,
+                        2549
+                    ],
+                    [
+                        2649,
+                        2801
+                    ],
+                    [
+                        2950,
+                        3072
+                    ],
+                    [
+                        3243,
+                        3381
+                    ],
+                    [
+                        3671,
+                        3836
+                    ],
+                    [
+                        4576,
+                        4743
+                    ],
+                    [
+                        5835,
+                        5961
+                    ],
+                    [
+                        6713,
+                        6853
+                    ],
+                    [
+                        7307,
+                        7425
+                    ],
+                    [
+                        7927,
+                        8067
+                    ],
+                    [
+                        8640,
+                        8795
+                    ],
+                    [
+                        11688,
+                        11835
+                    ],
+                    [
+                        12242,
+                        12389
+                    ],
+                    [
+                        13127,
+                        13330
+                    ],
+                    [
+                        14377,
+                        14538
+                    ],
+                    [
+                        14960,
+                        15104
+                    ],
+                    [
+                        15640,
+                        15893
+                    ],
+                    [
+                        16608,
+                        16761
+                    ],
+                    [
+                        17136,
+                        17284
+                    ]
+                ]
+            },
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": [
+                    [
+                        6284,
+                        6411
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-11-12T22:04:23.119693",
+        "updatedAt": "2025-01-04T16:54:21"
+    },
+    {
+        "id": "d5fdf529-6250-4dde-8c7f-d822889867b7",
+        "name": "tachikawa_K-W_1B.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/tachikawa_K-W_1B.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=8d5173254e3f7d55b4383e0ad864325d8abaaa44219b93abec7feb8da6c15a65",
+        "width": 1280,
+        "height": 720,
+        "fps": 29.97002997,
+        "frameCount": 10312,
+        "duration": 344.0770666667,
+        "secondsToAnnotate": 1,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        1659,
+                        1811
+                    ],
+                    [
+                        1969,
+                        2169
+                    ],
+                    [
+                        2399,
+                        2636
+                    ],
+                    [
+                        2980,
+                        3145
+                    ],
+                    [
+                        3439,
+                        3653
+                    ],
+                    [
+                        3986,
+                        4185
+                    ],
+                    [
+                        4877,
+                        5017
+                    ],
+                    [
+                        5201,
+                        5453
+                    ],
+                    [
+                        5860,
+                        6045
+                    ],
+                    [
+                        6832,
+                        6963
+                    ],
+                    [
+                        7101,
+                        7239
+                    ],
+                    [
+                        7655,
+                        7825
+                    ],
+                    [
+                        8423,
+                        8598
+                    ],
+                    [
+                        8867,
+                        9051
+                    ],
+                    [
+                        9553,
+                        9702
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-10-22T14:41:38.168456",
+        "updatedAt": "2025-01-04T16:54:23"
+    },
+    {
+        "id": "e3c4f3fe-7fce-4b9c-9183-8a9e66231d97",
+        "name": "tachikawa_K-W_1T.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/tachikawa_K-W_1T.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=a4b96fb18d465aeb649c57dacf92c8facdb1ea5842405c6a568a413b339260ca",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 14489,
+        "duration": 483.4496333333,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        5696,
+                        5892
+                    ],
+                    [
+                        6026,
+                        6254
+                    ],
+                    [
+                        6547,
+                        6750
+                    ],
+                    [
+                        7646,
+                        7793
+                    ],
+                    [
+                        8080,
+                        8211
+                    ],
+                    [
+                        9398,
+                        9683
+                    ],
+                    [
+                        10843,
+                        11003
+                    ],
+                    [
+                        11256,
+                        11429
+                    ],
+                    [
+                        11727,
+                        11895
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-10-22T14:35:18.739882",
+        "updatedAt": "2025-01-04T16:54:25"
+    },
+    {
+        "id": "6ea91fa1-1536-4ca0-8abd-7f89589aea14",
+        "name": "tachikawa_K-W_2B.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/tachikawa_K-W_2B.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=05b51ab2d47b01ba5623170104c34213339b4097bef196fea38907fb434d7e17",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 8489,
+        "duration": 283.2496333333,
+        "secondsToAnnotate": 2,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": [
+                    [
+                        4760,
+                        4924
+                    ]
+                ]
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        1353,
+                        1585
+                    ],
+                    [
+                        2732,
+                        2939
+                    ],
+                    [
+                        3518,
+                        3712
+                    ],
+                    [
+                        5125,
+                        5319
+                    ],
+                    [
+                        5581,
+                        5831
+                    ],
+                    [
+                        6721,
+                        6843
+                    ],
+                    [
+                        7221,
+                        7353
+                    ],
+                    [
+                        7883,
+                        8041
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-10-22T15:38:36.591918",
+        "updatedAt": "2025-01-04T16:54:28"
+    },
+    {
+        "id": "efe7821e-fb81-497a-82fa-b1213d7a34e2",
+        "name": "tachikawa_K-W_2T.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/tachikawa_K-W_2T.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=47509db9214be6ef2e1d13fd69a9c55d902cc32bd614f72d949fd4378c6cb04b",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 19409,
+        "duration": 647.6136333333,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        1065,
+                        1228
+                    ],
+                    [
+                        1419,
+                        1563
+                    ],
+                    [
+                        1963,
+                        2286
+                    ],
+                    [
+                        2669,
+                        2886
+                    ],
+                    [
+                        3499,
+                        3634
+                    ],
+                    [
+                        3838,
+                        3995
+                    ],
+                    [
+                        4414,
+                        4736
+                    ],
+                    [
+                        5097,
+                        5328
+                    ],
+                    [
+                        5731,
+                        5959
+                    ],
+                    [
+                        6362,
+                        6540
+                    ],
+                    [
+                        7225,
+                        7363
+                    ],
+                    [
+                        7529,
+                        7755
+                    ],
+                    [
+                        11664,
+                        11881
+                    ],
+                    [
+                        12437,
+                        12746
+                    ],
+                    [
+                        13060,
+                        13454
+                    ],
+                    [
+                        13987,
+                        14158
+                    ],
+                    [
+                        14431,
+                        14656
+                    ],
+                    [
+                        18294,
+                        18482
+                    ],
+                    [
+                        18920,
+                        19169
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-10-22T14:39:55.842659",
+        "updatedAt": "2025-01-04T16:54:30"
+    },
+    {
+        "id": "e4a0d7c0-cb16-4aa0-8233-8df1f3eef457",
+        "name": "tachikawa_K-W_3T.mp4",
+        "status": "completed",
+        "externalStatus": "registered",
+        "url": "https://prod-fastlabel-app-annotations.s3.amazonaws.com/workspaces/ca87a471-a8c1-42b5-be7a-8f68202fd7da/d08f282f-e6bb-4e3f-b4ac-e0e1b035975d/tasks/tachikawa_K-W_3T.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYVHKCFVVPLOSV33K%2F20250107%2Fap-northeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250107T164107Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHMaDmFwLW5vcnRoZWFzdC0xIkgwRgIhANyZQTOnHY45kdmvmNCS7N63cZxA7xMyiaD06eo2310kAiEA3WMbFDlM8gkprdJ4MXcyN37v%2FKBGsemtMFL0%2BesOQuwqgAQIXBABGgw1OTUzNDM4NDY3NjIiDMbYNewrCK1VetiFKSrdA7jXzne0HeiWHjh6r2q8wQy82nO2jQ1y2pRi57DO%2FB1vlgYndQV1A%2BUkz5UDidpDeY7UwoMnMj8%2FiTxsf%2FE43h2UNSAe2xihmQmaKhmF7rZzl%2Fy%2Bk%2B6eGiylXh89kHeyj%2FuN6e1Ohdg0CauQW22QoxXW%2B3LPAIDYNLrYhEHHwBuzK4sXVtBpnSTvVUhIibXASMwrFg4cBsI9QU6pvb06NkfO9%2Fnw5wLk9nR3rvLTdtu42enGnHPuvi2Q6WzmjlvUQw7okwDzBBV0Ca3H3%2BKj%2B6zeLg%2B8hqeybxowZT1t9HaKhQVWDoGj1EFgg2%2BHc%2FWxodd4znd1bHvqGgd%2BDPGub%2Bztfx0h3fhRNJtMm%2BZQcO26fDh7PypIaYpTwbF1QKy6%2FXfgv0sjPyH%2FgGAWEqVVWfItXvpyLD3%2BqirxSD26jnxAxav1TKwvmecmm8AqXh%2BGtJxFSE4DjVVH1vcQNiITARl%2FYvjKFGCkg1FucCxGtAMD0noizQDgRngm56C%2FTyznFvOKdUvj44reT25x4CQW2rVmyX3F72FLACEXnXJAFWBp81FUHzvVr1o0Siuxos9Ca4wGYJfwZFXqb1K%2FBIIfEY%2FKqIzFOAiKMGhWMPZh3WVvi8B%2Bjd5wud6mh8FtrTDikPS7BjqkAZoreCVHaP9tPGJ9NiXqOVt7oGK0z3KpUE7dydPNhYOycajDvo%2FxRLY40iSacXlhYaMhgsjxjH02ERLsPKk5rpfz8FZUKkchThTEGgtlw5sDuNhjt2LrUXU32xRnjMiny29ut4LahnWGtOeur35XPo9%2BeEIBG9qm9Y9szAb5f2lOIhUObQSEIJjX%2F0zWeUcruRovRlLU2bFEUfF5T%2F0aEmO9DmsO&X-Amz-Signature=841479eed1a8fe5a3cbe91c61f3a3247df8f41fd9323af0155c4a83af06b61f3",
+        "width": 640,
+        "height": 360,
+        "fps": 29.97002997,
+        "frameCount": 9434,
+        "duration": 314.7811333333,
+        "secondsToAnnotate": 0,
+        "attributes": [
+            {
+                "type": "frameSelect",
+                "name": "牽制",
+                "key": "pick_off",
+                "title": "",
+                "value": []
+            },
+            {
+                "type": "frameSelect",
+                "name": "ピッチ",
+                "key": "pitch",
+                "title": "",
+                "value": [
+                    [
+                        2222,
+                        2469
+                    ],
+                    [
+                        2643,
+                        2822
+                    ],
+                    [
+                        3073,
+                        3293
+                    ],
+                    [
+                        3543,
+                        3764
+                    ],
+                    [
+                        4326,
+                        4648
+                    ],
+                    [
+                        5237,
+                        5570
+                    ],
+                    [
+                        6535,
+                        6663
+                    ],
+                    [
+                        6976,
+                        7107
+                    ],
+                    [
+                        7464,
+                        7710
+                    ],
+                    [
+                        8342,
+                        8445
+                    ]
+                ]
+            }
+        ],
+        "tags": [],
+        "assignee": "hibiya0226",
+        "reviewer": "",
+        "approver": "",
+        "externalAssignee": "",
+        "externalReviewer": "",
+        "externalApprover": "",
+        "createdAt": "2024-10-22T15:39:11.754880",
+        "updatedAt": "2025-01-04T16:54:32"
+    }
+]

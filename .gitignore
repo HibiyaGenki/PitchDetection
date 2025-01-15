@@ -179,10 +179,8 @@ pyrightconfig.json
 frames/
 videos/
 DIA/
-
-
-
-
-
-
-
+Videos/
+.vscode/
+data/
+log/
+src_new/

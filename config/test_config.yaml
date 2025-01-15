@@ -1,0 +1,34 @@
+version: 1.0
+
+seed: 0
+
+model:
+    cnn: "i3d"
+    train_entire_cnn: True
+    in_channel: 1024
+    n_features: 256
+    n_classes: 2
+    n_stages: 4
+    n_layers: 10
+
+dataset:
+    train_annot_file_path: "data/train_annotations250108.json"
+    val_annot_file_path: "data/val_annotations250108.json"
+    clip_length: 256
+    frame_root_dir: "data/frames"
+
+training:
+    epochs: 100
+    batch_size: 2
+    num_workers: 2
+    step_size: 10
+    gamma: 0.8
+    lr: 0.001
+    log_dir: "log/"
+    save_interval: 10
+    log_interval: 20
+    gpu_ids: [0, 1, 2]
+
+testing:
+    batch_size: 1
+    num_workers: 1
