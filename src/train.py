@@ -1,21 +1,27 @@
 import argparse
 import datetime
 import os
+import warnings
 from zoneinfo import ZoneInfo
+from typing import Any, Dict
 
 import numpy as np
 import torch
 from omegaconf import OmegaConf
 from sklearn.metrics import average_precision_score, f1_score
 from torchvision.transforms import Compose
+import torch.nn.functional as F
 
 from dataset import MyDataset
 from mean_std import get_mean, get_std
 from metrics import calc_average_precision
 from models.detection_model import DetectionModel
-from transformers import ColorJitter, Normalize, ToTensor
+from transformers import ColorJitter, Normalize, ToTensor, RandomHorizontalFlip, RandomRotation
 from utils.config import load_config, save_config
 from utils.logger import get_logger, set_logger
+from loss_fn.focal import FocalLoss
+
+warnings.filterwarnings("ignore", category=UserWarning)
 
 timezone = ZoneInfo("Asia/Tokyo")
 logger = get_logger(__name__)
@@ -26,13 +32,41 @@ def get_arguments():
     parser.add_argument(
         "--config", type=str, required=True, help="Path to the config file"
     )
-    parser.add_argument(
-        "--device", type=str, default="cpu", help="Device to use (cpu, cuda)"
-    )
+    # parser.add_argument(
+    #     "--device", type=str, default="cpu", help="Device to use (cpu, cuda)"
+    # )
     parser.add_argument(
         "--resume", type=str, default=None, help="Path to the checkpoint to resume"
     )
     return parser.parse_args()
+
+
+def make_transform(config) -> Dict[str, Any]:
+    transform = []
+    if config.transform.color_jitter:
+        transform.append(
+            ColorJitter(
+                brightness=list(config.transform.color_jitter_brightness),
+                contrast=list(config.transform.color_jitter_contrast),
+                saturation=list(config.transform.color_jitter_saturation),
+                hue=list(config.transform.color_jitter_hue),
+            )
+        )
+    if config.transform.random_horizontal_flip:
+        transform.append(
+            RandomHorizontalFlip(
+                p=config.transform.random_horizontal_flip_p,
+            )
+        )
+    if config.transform.random_rotation:
+        transform.append(
+            RandomRotation(
+                degrees=config.transform.random_rotation_degrees,
+            )
+        )
+    transform.append(ToTensor())
+    transform.append(Normalize(mean=get_mean(), std=get_std()))
+    return Compose(transform)
 
 
 def main():
@@ -55,7 +89,8 @@ def main():
     logger.info("config: \n" + OmegaConf.to_yaml(config))
 
     logger.info("Loading dataset...")
-    transform = Compose(
+    train_transform = make_transform(config)
+    val_transform = Compose(
         [
             ToTensor(),
             Normalize(mean=get_mean(), std=get_std()),
@@ -67,14 +102,14 @@ def main():
         annot_file_path=config.dataset.train_annot_file_path,
         frame_root_dir=config.dataset.frame_root_dir,
         clip_length=config.dataset.clip_length,
-        transform=transform,
+        transform=train_transform,
     )
     val_dataset = MyDataset(
         train=False,
         annot_file_path=config.dataset.val_annot_file_path,
         frame_root_dir=config.dataset.frame_root_dir,
         clip_length=config.dataset.clip_length,
-        transform=transform,
+        transform=val_transform,
     )
 
     train_loader = torch.utils.data.DataLoader(
@@ -123,20 +158,46 @@ def main():
     # model.to(device)
     model = torch.nn.DataParallel(model, device_ids=config.training.gpu_ids).cuda()
 
-    criterion = torch.nn.CrossEntropyLoss()
+    ce_criterion = torch.nn.CrossEntropyLoss()
+    # mse_loss = torch.nn.MSELoss()
+    focal_criterion = FocalLoss()
 
     logger.info("Start training...")
     for epoch in range(config.training.epochs):
         model.train()
         total_loss = 0
-        for i, (x, y) in enumerate(train_loader):
+        for i, (x, y, _) in enumerate(train_loader):
             # x, y = x.to(device), y.to(device)
             x, y = x.cuda(non_blocking=True), y.cuda(non_blocking=True)
             optimizer.zero_grad()
-            y_preds = model(x)
+
+            # y_preds = model(x)
+            # loss = 0
+            
+            # for y_pred in y_preds:
+            #     loss += ce_criterion(y_pred, y)
+
+            y_pred = model(x)
+
+
+
             loss = 0
-            for y_pred in y_preds:
-                loss += criterion(y_pred, y)
+            
+    
+            # y_pred_flat = y_pred.view(-1, 2)  
+            # y_flat      = y.view(-1)
+            loss = ce_criterion(y_pred, y)
+            
+
+
+
+
+
+                # loss += focal_criterion(y_pred, y)
+                # print(y_pred.size(),y.size(), loss.size(), len(y_preds))
+                # loss += 0.15*mse_loss(y_pred, y)
+                # print(mse_loss(y_pred, y))
+
             total_loss += loss.item()
             loss.backward()
             optimizer.step()
@@ -149,32 +210,43 @@ def main():
         with torch.no_grad():
             val_loss = 0
             total_ap = 0
-            for i, (x, y) in enumerate(val_loader):
+            total_f1 = 0
+            for i, (x, y, _) in enumerate(val_loader):
                 # x, y = x.to(device), y.to(device)
                 x, y = x.cuda(non_blocking=True), y.cuda(non_blocking=True)
                 y_pred = model(x)
-                loss = criterion(y_pred[-1], y)
+                # loss = ce_criterion(y_pred[-1], y) + focal_criterion(y_pred[-1], y)
+                # loss = ce_criterion(y_pred[-1], y)
+                loss = ce_criterion(y_pred, y)
+                #mstcnの時はloss = ce_criterion(y_pred[-1], y)
                 val_loss += loss.item()
 
                 # batch_size, n_classes, n_frames -> batch_size * n_frames, n_classes
-                y_pred = y_pred[-1].permute(0, 2, 1).reshape(-1, config.model.n_classes)
+                y_pred = y_pred.permute(0, 2, 1).reshape(-1, config.model.n_classes)
+                #MSTCNはy_pred = y_pred[-1].permute(0, 2, 1).reshape(-1, config.model.n_classes)
                 # batch_size, n_classes, n_frames -> batch_size * n_frames, n_classes -> batch_size * n_frames
                 y = y.permute(0, 2, 1).reshape(-1, config.model.n_classes).argmax(dim=1)
+                
                 ap = calc_average_precision(y_pred, y)[0]
+                
+                y_pred = y_pred.argmax(dim=1).cpu()
+                y = y.cpu()
+                f1 = f1_score(y, y_pred, average="macro")
 
                 total_ap += ap
+                total_f1 += f1
 
             logger.info(
-                f"Epoch {epoch}, Val Loss {val_loss / len(val_loader)}, AP {total_ap / len(val_loader)}"
+                f"Epoch {epoch}, Val Loss {val_loss / len(val_loader)}, AP {total_ap / len(val_loader)}, F1 {total_f1 / len(val_loader)}"
             )
 
         if epoch % config.training.save_interval == 0:
             save_path = os.path.join(log_dir, "weights", f"model_{epoch}.pth")
             os.makedirs(os.path.dirname(save_path), exist_ok=True)
-            torch.save(model.state_dict(), save_path)
+            torch.save(model.module.state_dict(), save_path)
             save_states = {
                 "epoch": epoch,
-                "model_state_dict": model.state_dict(),
+                "model_state_dict": model.module.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "scheduler_state_dict": scheduler.state_dict(),
             }

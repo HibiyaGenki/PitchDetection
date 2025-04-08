@@ -435,6 +435,6 @@ class InceptionI3d(nn.Module):
 
 def load_i3d() -> nn.Module:
     i3d = InceptionI3d(400, in_channels=3)
-    i3d.load_state_dict(torch.load("src/models/weights/rgb_imagenet.pt"))
+    i3d.load_state_dict(torch.load("/home/ubuntu/slocal/PitchDetection/src/models/weights/rgb_imagenet.pt"))
     i3d.replace_logits(157)
     return i3d

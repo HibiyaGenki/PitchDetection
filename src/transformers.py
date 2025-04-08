@@ -71,6 +71,12 @@ class ColorJitter(object):
                         image, self.contrast
                     )
                 )
+            else:
+                raise ValueError(
+                    "contrast must be float or tuple of float. Got {}".format(
+                        type(self.contrast)
+                    )
+                )
             self.image_transforms.append(contrast_transform)
 
         if self.saturation is not None or self.saturation != 0.0:

@@ -39,7 +39,9 @@ class DetectionModel(nn.Module):
         else:
             raise ValueError(f"Invalid CNN: {cnn}")
 
-        self.tcn = MultiStageTCN(in_channel, n_features, n_classes, n_stages, n_layers)
+        # self.tcn = MultiStageTCN(in_channel, n_features, n_classes, n_stages, n_layers)
+        self.lstm = nn.LSTM(in_channel, hidden_size = 128, num_layers  = 2, batch_first = True)
+        self.fc = nn.Linear(128, 2)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         batch_size, seq_len, c, h, w = x.size()
@@ -59,9 +61,18 @@ class DetectionModel(nn.Module):
 
         # (batch_size * seq_len, in_channel) -> (batch_size, seq_len, in_channel)
         x = x.view(batch_size, seq_len, -1).permute(0, 2, 1)
+        x = x.permute(0, 2, 1)
         # (batch_size, seq_len, in_channel) -> (batch_size, n_classes, seq_len)
+        out, (h_n, c_n) = self.lstm(x)
+        # print("out_size",out.size())
+        out = self.fc(out)
+        out = out.permute(0,2,1).contiguous()
+        return out
+        # 最後の時刻ステップのみを全結合層に通す例
         x = self.tcn(x)
         return x
+   
+    
 
 
 # 入力データの形状: (batch_size, seq_len, c, h, w)（動画のバッチ）。

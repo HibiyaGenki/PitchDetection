@@ -1,4 +1,4 @@
-version: 1.0
+version: 1.1
 
 seed: 0
 
@@ -12,19 +12,32 @@ model:
     n_layers: 10
 
 dataset:
-    train_annot_file_path: "data/train_annotations250108.json"
-    val_annot_file_path: "data/val_annotations250108.json"
-    clip_length: 64
-    frame_root_dir: "data/frames"
+    train_annot_file_path: "/home/ubuntu/slocal/PitchDetection/json/train_annotations250108.json"
+    val_annot_file_path: "/home/ubuntu/slocal/PitchDetection/json/val_annotations250108.json"
+    clip_length: 512
+    frame_root_dir: "/home/ubuntu/slocal/PitchDetection/data/frames"
 
 training:
     epochs: 100
-    batch_size: 1
-    num_workers: 2
-    step_size: 10
+    batch_size: 2
+    num_workers: 4
+    step_size: 4
     gamma: 0.8
-    lr: 0.001
+    lr: 0.0005
     log_dir: "log/"
     save_interval: 10
     log_interval: 20
-    gpu_ids: [0]
+    gpu_ids: [0, 1]
+
+transform:
+    color_jitter: False
+    color_jitter_brightness: [0.97, 1.03]
+    color_jitter_contrast: [0.98, 1.02]
+    color_jitter_saturation: [0.99, 1.01]
+    color_jitter_hue: [-0.05, 0.05]
+
+    random_horizontal_flip: False
+    random_horizontal_flip_p: 0.2
+
+    random_rotation: False
+    random_rotation_degrees: 2

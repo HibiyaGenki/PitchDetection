@@ -184,3 +184,7 @@ Videos/
 data/
 log/
 src_new/
+output_frames/
+*.png
+*.txt
+*.json

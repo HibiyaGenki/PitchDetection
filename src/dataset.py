@@ -29,6 +29,7 @@ class MyDataset(Dataset):
         assert os.path.exists(annot_file_path), f"{annot_file_path:} doesn't exist."
         assert os.path.exists(frame_root_dir), f"{frame_root_dir} doesn't exist."
 
+
         with open(annot_file_path, "r") as annot_file:
             annot = json.load(annot_file)
 
@@ -77,6 +78,24 @@ class MyDataset(Dataset):
                 "events": events,
             }
 
+            self.roi_annot_path = "/home/ubuntu/slocal/PitchDetection/json/ROI_annot_annotations.json"
+        
+            self.roi_dict = self._get_roi(self.roi_annot_path)
+
+
+    def _get_roi(self, annot_file_path):
+        with open(annot_file_path, "r") as annot_file:
+            annot = json.load(annot_file)
+        values_dict = {}
+        for video in annot:
+            video_name = video.get("name")
+            annotations = video.get("annotations", [])
+            if annotations:  # Check if annotations exist
+                points = annotations[0].get("points", {})
+                first_value = points.get("1", {}).get("value", [])
+                values_dict[video_name] = first_value
+        return values_dict
+
     def __len__(self) -> int:
         # Return the number of events if training, otherwise return the number of divided frames
         if self.train:
@@ -111,7 +130,7 @@ class MyDataset(Dataset):
             event_start_frame = event["start_frame"]
             event_end_frame = event["end_frame"]
             frame_count = event["frame_count"]
-
+            #print("video_name",video_name)
             # Randomly select a clip
             # if the random number is less than 0.5, the clip is selected before the event
             # besides, if the random number is greater than or equal to 0.5, the clip is selected after the event
@@ -154,13 +173,18 @@ class MyDataset(Dataset):
                 else:
                     idx -= self.annot[video_name]["frame_count"] // self.clip_length
 
-        frames = np.array(frames)
+        frames_np = np.array(frames)
         event_annotation = np.array(event_annotation)
-
+        
         if self.transform:
-            frames = self.transform(frames)
+            frames = self.transform(frames_np)
+            
+        meta = {
+            "video_name": video_name,
+            # "frames": frames,
+        }
 
-        return frames, event_annotation
+        return frames, event_annotation, meta
 
     def _get_frames(
         self, video_name: str, start_frame: int, end_frame: int
@@ -174,12 +198,20 @@ class MyDataset(Dataset):
             end_frame (int): end frame index
         """
         frames = []
+        roi_random = random.random()
         for i in range(start_frame, end_frame + 1):
             frame_path = os.path.join(
                 self.annot[video_name]["frame_dir"], f"frame_{i:05d}.jpg"
             )
             assert os.path.exists(frame_path), f"{frame_path} doesn't exist."
             frame = cv2.imread(frame_path)
+            if self.train:
+                roi_value = self.roi_dict[video_name]
+                #print("frame_path", frame_path)
+                if roi_random < 0.5:
+                    x1, y1, x2, y2 = map(int, roi_value)
+                    x1, x2, y1, y2 = determine_suited_roi(frame.shape[1], frame.shape[0], {"x1": x1, "x2": x2, "y1": y1, "y2": y2})
+                    frame = frame[y1:y2, x1:x2]
             frame = cv2.resize(frame, (224, 224))
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             frames.append(frame)
@@ -225,3 +257,63 @@ class MyDataset(Dataset):
                 raise ValueError(f"Unknown event name: {event_name}")
 
         return event_annotation
+
+def determine_suited_roi(original_width: int, original_height: int, roi: List[float], resize: List[int] = [224, 224]) -> List[float]:
+    # x1, x2, y1, y2 = int(roi["x1"] * width), int(roi["x2"] * width), int(roi["y1"] * height), int(roi["y2"] * height)
+    x1, x2, y1, y2 = roi["x1"], roi["x2"], roi["y1"], roi["y2"]
+
+    width, height = x2 - x1, y2 - y1
+    center = [(x1 + x2) / 2, (y1 + y2) / 2]
+    aspect_ratio = width / height
+    target_aspect_ratio = resize[0] / resize[1]
+    if aspect_ratio == target_aspect_ratio:
+        # width is same as height
+        pass
+    elif aspect_ratio > target_aspect_ratio:
+        # width is longer than height
+        if width * target_aspect_ratio >= original_height:
+            # height is longer than original height
+            width = original_height / target_aspect_ratio
+            x1, x2 = center[0] - width / 2, center[0] + width / 2
+            center[1] = original_height / 2
+            y1, y2 = 0, original_height
+            if x1 < 0:
+                x1, x2 = 0, width
+            elif x2 > original_width:
+                x1, x2 = original_width - width, original_width
+            center[0] = (x1 + x2) / 2
+        else:
+            height = width / target_aspect_ratio
+            y1, y2 = center[1] - height / 2, center[1] + height / 2
+            if y1 < 0:
+                y1, y2 = 0, height
+            elif y2 > original_height:
+                y1, y2 = original_height - height, original_height
+            center[1] = (y1 + y2) / 2
+    else:
+        # height is longer than width
+        if height * target_aspect_ratio >= original_width:
+            # width is longer than original width
+            height = original_width / target_aspect_ratio
+            y1, y2 = center[1] - height / 2, center[1] + height / 2
+            center[0] = original_width / 2
+            x1, x2 = 0, original_width
+            if y1 < 0:
+                y1, y2 = 0, height
+            elif y2 > original_height:
+                y1, y2 = original_height - height, original_height
+            center[1] = (y1 + y2) / 2
+        else:
+            width = height * target_aspect_ratio
+            x1, x2 = center[0] - width / 2, center[0] + width / 2
+            if x1 < 0:
+                x1, x2 = 0, width
+            elif x2 > original_width:
+                x1, x2 = original_width - width, original_width
+            center[0] = (x1 + x2) / 2
+                
+    assert x1 >= 0 and x2 <= original_width, "x1: {}, x2: {}, original_width: {}".format(x1, x2, original_width)
+    assert y1 >= 0 and y2 <= original_height, "y1: {}, y2: {}, original_height: {}".format(y1, y2, original_height)
+        
+    suited_roi = [int(x1), int(x2), int(y1), int(y2)]
+    return suited_roi

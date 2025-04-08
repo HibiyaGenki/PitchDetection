@@ -12,10 +12,11 @@ model:
     n_layers: 10
 
 dataset:
-    train_annot_file_path: "data/train_annotations250108.json"
-    val_annot_file_path: "data/val_annotations250108.json"
-    clip_length: 256
-    frame_root_dir: "data/frames"
+    train_annot_file_path: "/home/ubuntu/slocal/PitchDetection/json/train_annotations250108.json"
+    val_annot_file_path: "/home/ubuntu/slocal/PitchDetection/json/val_annotations250108.json"
+    test_annot_file_path: "/home/ubuntu/slocal/PitchDetection/json/test_annotations.json"
+    clip_length: 512
+    frame_root_dir: "/home/ubuntu/slocal/PitchDetection/data/frames"
 
 training:
     epochs: 100
@@ -27,7 +28,7 @@ training:
     log_dir: "log/"
     save_interval: 10
     log_interval: 20
-    gpu_ids: [0, 1, 2]
+    gpu_ids: [0]
 
 testing:
     batch_size: 1
