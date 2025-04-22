@@ -114,13 +114,13 @@ def main():
 
     train_loader = torch.utils.data.DataLoader(
         train_dataset,
-        batch_size=config.training.batch_size * len(config.training.gpu_ids),
+        batch_size=config.training.batch_size,
         shuffle=True,
         num_workers=config.training.num_workers,
     )
     val_loader = torch.utils.data.DataLoader(
         val_dataset,
-        batch_size=config.training.batch_size * len(config.training.gpu_ids),
+        batch_size=config.training.batch_size ,
         shuffle=False,
         num_workers=config.training.num_workers,
     )
@@ -131,6 +131,7 @@ def main():
     logger.info("Loading model...")
     model = DetectionModel(
         cnn=config.model.cnn,
+        sequence_model=config.model.sequence_model,
         train_entire_cnn=config.model.train_entire_cnn,
         in_channel=config.model.in_channel,
         n_features=config.model.n_features,
@@ -156,7 +157,9 @@ def main():
     # device = torch.device(args.device)
 
     # model.to(device)
-    model = torch.nn.DataParallel(model, device_ids=config.training.gpu_ids).cuda()
+    # model = torch.nn.DataParallel(model, device_ids=config.training.gpu_ids).cuda()
+    model = model.cuda()  # シングルGPUで動かす
+
 
     ce_criterion = torch.nn.CrossEntropyLoss()
     # mse_loss = torch.nn.MSELoss()
@@ -170,29 +173,21 @@ def main():
             # x, y = x.to(device), y.to(device)
             x, y = x.cuda(non_blocking=True), y.cuda(non_blocking=True)
             optimizer.zero_grad()
+            if y.ndim == 3 and y.shape[1] > 1:
+                y = y.argmax(dim=1)
 
-            # y_preds = model(x)
-            # loss = 0
-            
-            # for y_pred in y_preds:
-            #     loss += ce_criterion(y_pred, y)
-
-            y_pred = model(x)
-
-
-
+            y_preds = model(x) # (batch_size, n_classes, n_frames)
             loss = 0
+            if isinstance(y_preds, list):  # MSTCN
+                for y_pred in y_preds:
+                    loss += ce_criterion(y_pred, y)
+            else:  # Other models
+                loss = ce_criterion(y_preds, y)
             
     
             # y_pred_flat = y_pred.view(-1, 2)  
             # y_flat      = y.view(-1)
-            loss = ce_criterion(y_pred, y)
-            
-
-
-
-
-
+            #loss += ce_criterion(y_pred, y)
                 # loss += focal_criterion(y_pred, y)
                 # print(y_pred.size(),y.size(), loss.size(), len(y_preds))
                 # loss += 0.15*mse_loss(y_pred, y)
@@ -214,24 +209,39 @@ def main():
             for i, (x, y, _) in enumerate(val_loader):
                 # x, y = x.to(device), y.to(device)
                 x, y = x.cuda(non_blocking=True), y.cuda(non_blocking=True)
-                y_pred = model(x)
+                y_preds = model(x)
                 # loss = ce_criterion(y_pred[-1], y) + focal_criterion(y_pred[-1], y)
                 # loss = ce_criterion(y_pred[-1], y)
-                loss = ce_criterion(y_pred, y)
+                #loss = ce_criterion(y_pred, y)
                 #mstcnの時はloss = ce_criterion(y_pred[-1], y)
+                if y.ndim == 3 and y.shape[1] > 1:
+                        y = y.argmax(dim=1)
+                        
+                if isinstance(y_preds, list):  # MSTCN
+                    loss = ce_criterion(y_preds[-1], y)  # 最終ステージのみloss計算（val時）
+                    pred_for_eval = y_preds[-1]
+                else:
+                    loss = ce_criterion(y_preds, y)
+                    pred_for_eval = y_preds
                 val_loss += loss.item()
+                pred_for_eval = pred_for_eval.permute(0, 2, 1).reshape(-1, config.model.n_classes)
+                if y.ndim == 3:
+                    y = y.permute(0, 2, 1).reshape(-1, config.model.n_classes).argmax(dim=1)
+                else:
+                    y = y.reshape(-1)
+
 
                 # batch_size, n_classes, n_frames -> batch_size * n_frames, n_classes
-                y_pred = y_pred.permute(0, 2, 1).reshape(-1, config.model.n_classes)
+                #y_pred = y_pred.permute(0, 2, 1).reshape(-1, config.model.n_classes)
                 #MSTCNはy_pred = y_pred[-1].permute(0, 2, 1).reshape(-1, config.model.n_classes)
                 # batch_size, n_classes, n_frames -> batch_size * n_frames, n_classes -> batch_size * n_frames
-                y = y.permute(0, 2, 1).reshape(-1, config.model.n_classes).argmax(dim=1)
-                
-                ap = calc_average_precision(y_pred, y)[0]
-                
-                y_pred = y_pred.argmax(dim=1).cpu()
-                y = y.cpu()
-                f1 = f1_score(y, y_pred, average="macro")
+                #y = y.permute(0, 2, 1).reshape(-1, config.model.n_classes).argmax(dim=1)
+                # logger.info(f"[DEBUG] y unique labels: {y.unique().cpu().numpy()}")
+                # logger.info(f"[DEBUG] pred_for_eval unique preds: {pred_for_eval.argmax(dim=1).unique().cpu().numpy()}")
+
+                ap = calc_average_precision(pred_for_eval, y)[0]
+
+                f1 = f1_score(y.cpu(), pred_for_eval.argmax(dim=1).cpu(), average="macro")
 
                 total_ap += ap
                 total_f1 += f1
@@ -243,10 +253,10 @@ def main():
         if epoch % config.training.save_interval == 0:
             save_path = os.path.join(log_dir, "weights", f"model_{epoch}.pth")
             os.makedirs(os.path.dirname(save_path), exist_ok=True)
-            torch.save(model.module.state_dict(), save_path)
+            torch.save(model.state_dict(), save_path)
             save_states = {
                 "epoch": epoch,
-                "model_state_dict": model.module.state_dict(),
+                "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "scheduler_state_dict": scheduler.state_dict(),
             }

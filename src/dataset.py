@@ -78,8 +78,11 @@ class MyDataset(Dataset):
                 "events": events,
             }
 
-            self.roi_annot_path = "/home/ubuntu/slocal/PitchDetection/json/ROI_annot_annotations.json"
-        
+            if self.train:
+                self.roi_annot_path = "/home/ubuntu/slocal/PitchDetection/json/ROI_annot_annotations.json"
+            else:
+                self.roi_annot_path = "/home/ubuntu/slocal/PitchDetection/json/val_ROI_annotations.json"
+
             self.roi_dict = self._get_roi(self.roi_annot_path)
 
 
@@ -205,13 +208,27 @@ class MyDataset(Dataset):
             )
             assert os.path.exists(frame_path), f"{frame_path} doesn't exist."
             frame = cv2.imread(frame_path)
-            if self.train:
+            # if self.train:
+            #     roi_value = self.roi_dict[video_name]
+            #     #print("frame_path", frame_path)
+            #     if roi_random < 0.5:
+            #         x1, y1, x2, y2 = map(int, roi_value)
+            #         x1, x2, y1, y2 = determine_suited_roi(frame.shape[1], frame.shape[0], {"x1": x1, "x2": x2, "y1": y1, "y2": y2})
+            #         frame = frame[y1:y2, x1:x2]
+            #ここから
+            apply_roi = self.train and roi_random < 0.5 or not self.train  # trainは50%、valは常に適用
+
+            if video_name in self.roi_dict and apply_roi:
                 roi_value = self.roi_dict[video_name]
-                #print("frame_path", frame_path)
-                if roi_random < 0.5:
-                    x1, y1, x2, y2 = map(int, roi_value)
-                    x1, x2, y1, y2 = determine_suited_roi(frame.shape[1], frame.shape[0], {"x1": x1, "x2": x2, "y1": y1, "y2": y2})
-                    frame = frame[y1:y2, x1:x2]
+                x1, y1, x2, y2 = map(int, roi_value)
+                x1, x2, y1, y2 = determine_suited_roi(
+                    frame.shape[1], frame.shape[0],
+                    {"x1": x1, "x2": x2, "y1": y1, "y2": y2}
+                )
+                frame = frame[y1:y2, x1:x2]
+
+            #ここ
+
             frame = cv2.resize(frame, (224, 224))
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             frames.append(frame)

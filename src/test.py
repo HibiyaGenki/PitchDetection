@@ -18,12 +18,42 @@ from transformers import Normalize, ToTensor
 from utils.config import load_config
 from utils.logger import get_logger
 from sklearn.metrics import accuracy_score, f1_score, accuracy_score, recall_score, classification_report
+from datetime import datetime
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
 
 logger = get_logger(__name__)
 timezone = ZoneInfo("Asia/Tokyo")
+
+
+import matplotlib.pyplot as plt
+import torch.nn.functional as F
+def plot_prediction_graph(video_name, logits_list, gt, output_dir, classes=["none", "pitch", "pick_off"]):
+    class_index = {c: i for i, c in enumerate(classes)}
+    logits = np.concatenate(logits_list, axis=0)
+    probs = F.softmax(torch.tensor(logits), dim=1).numpy()
+    video_basename = os.path.splitext(video_name)[0]
+
+    for target_class in classes:
+        idx = class_index[target_class]
+        if idx >= probs.shape[1]:
+            continue  # ← クラス数が不足している場合はスキップ
+
+        plt.figure(figsize=(15, 4))
+        plt.bar(np.arange(len(probs)), probs[:, idx], label=f"Predicted {target_class}", alpha=0.6)
+        gt_marks = [1 if g == idx else 0 for g in gt]
+        plt.plot(gt_marks, label=f"GT {target_class}", color="red", linestyle="--", linewidth=1)
+        plt.title(f"{video_name} - {target_class} Probability vs Ground Truth")
+        plt.xlabel("Frame")
+        plt.ylabel("Probability")
+        plt.ylim(0, 1.1)
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(os.path.join(output_dir, f"{video_basename}_{target_class}_prob.png"))
+        plt.close()
+
+
 
 
 def get_arguments():
@@ -61,11 +91,14 @@ def get_arguments():
 
 
 def main():
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_dir = f"test_output_{timestamp}"
+    os.makedirs(output_dir, exist_ok=True)
+
     args = get_arguments()
     assert os.path.exists(args.config), f"{args.config} doesn't exist."
     assert os.path.exists(args.checkpoint), f"{args.checkpoint} doesn't exist."
-    #assert os.path.exists(args.frame_root_dir), f"{args.frame_root_dir} doesn't exist."
-    #assert os.path.exists(args.test_annotations), f"{args.test_annotations} doesn't exist."
+
 
     config = load_config(args.config)
 
@@ -101,6 +134,7 @@ def main():
 
     model = DetectionModel(
         cnn=config.model.cnn,
+        sequence_model=config.model.sequence_model,
         train_entire_cnn=config.model.train_entire_cnn,
         in_channel=config.model.in_channel,
         n_features=config.model.n_features,
@@ -141,9 +175,15 @@ def main():
     def extract_max_values(array):
         values = [0 if pair[0] > pair[1] else 1 for pair in array]
         return values
-    criterion = torch.nn.CrossEntropyLoss()
+   
     model = model.cuda()
     model.eval()
+    criterion = torch.nn.CrossEntropyLoss()
+    y_preds_original = {}  # logits
+    normalized_preds_dict = {} 
+    preds_dict = {}        # argmax結果
+    gt_dict = {}           # ground truth
+
     with torch.no_grad():
             test_loss = 0
             total_ap = 0
@@ -168,8 +208,32 @@ def main():
                 x, y = x.cuda(non_blocking=True), y.cuda(non_blocking=True)
                 y_pred = model(x)
                 #print(y, y_pred)
+                # if isinstance(y_pred, (list, tuple)):  # MSTCNの出力
+                #     y_pred = y_pred[-1]
+                y_preds = model(x)
+                if isinstance(y_preds, (list, tuple)):
+                    y_pred = y_preds[-1]  # ASFormerの最終ステージ出力を使用
+                else:
+                    y_pred = y_preds
                 loss = criterion(y_pred, y)
                 test_loss += loss.item()
+
+        
+                y_pred_reshaped = y_pred.permute(0, 2, 1).reshape(-1, config.model.n_classes)
+                y_pred_softmax = F.softmax(y_pred_reshaped, dim=1)  # 正規化
+
+
+                y_gt = y.permute(0, 2, 1).reshape(-1, config.model.n_classes).argmax(dim=1)
+                pred_for_eval = y_pred.permute(0, 2, 1).reshape(-1, config.model.n_classes)
+                y_preds_original.setdefault(video_name, []).append(pred_for_eval.cpu().tolist())
+                normalized_preds_dict.setdefault(video_name, []).append(F.softmax(pred_for_eval, dim=1).cpu().tolist())
+                preds_dict.setdefault(video_name, []).extend(F.softmax(pred_for_eval, dim=1).argmax(dim=1).cpu().tolist())
+                gt_dict.setdefault(video_name, []).extend(y_gt.cpu().tolist())
+
+                y = y_gt
+                ap = calc_average_precision(pred_for_eval, y)[0]
+                #y_pred = pred_for_eval.argmax(dim=1).cpu()
+
 
                 #mstcnの時はloss = criterion(y_pred[-1], y)
                 # print("ypred",y_pred[0].size(),len(y_pred))
@@ -178,15 +242,25 @@ def main():
                 # y_pred = y_pred[-1].permute(0, 2, 1).reshape(-1, config.model.n_classes)
                 # result = extract_max_values(y_pred)
                 
-                y = y.permute(0, 2, 1).reshape(-1, config.model.n_classes).argmax(dim=1)
-                y_pred = y_pred.permute(0, 2, 1).reshape(-1, config.model.n_classes)
-                #MSTCNはy_pred = y_pred[-1].permute(0, 2, 1).reshape(-1, config.model.n_classes)
-                ap = calc_average_precision(y_pred, y)[0]
+                # y = y.permute(0, 2, 1).reshape(-1, config.model.n_classes).argmax(dim=1)
+                # y_pred = y_pred.permute(0, 2, 1).reshape(-1, config.model.n_classes)
+                # #MSTCNはy_pred = y_pred[-1].permute(0, 2, 1).reshape(-1, config.model.n_classes)
+                # ap = calc_average_precision(y_pred, y)[0]
 
-                if video_name in y_preds_original.keys():
-                    y_preds_original[video_name].append(y_pred.tolist())
-                else:
-                    y_preds_original[video_name] = y_pred.tolist()
+                # 
+                # ロジット（softmax前）を保存
+                y_preds_original.setdefault(video_name, []).append(pred_for_eval.cpu().tolist())
+
+                # ソフトマックス後の確率を保存
+                normalized_preds_dict.setdefault(video_name, []).append(F.softmax(pred_for_eval, dim=1).cpu().tolist())
+
+                # argmaxで予測ラベルを取得し、保存
+                y_pred_label = pred_for_eval.argmax(dim=1).cpu()
+                preds_dict.setdefault(video_name, []).extend(y_pred_label.tolist())
+
+                # 正解ラベルを保存
+                gt_dict.setdefault(video_name, []).extend(y_gt.cpu().tolist())
+
 
                 
                 
@@ -203,11 +277,18 @@ def main():
                 # recall_micro = recall_score(y.cpu(), result, average='micro')  # 全体のリコール
                 # recall_weighted = recall_score(y.cpu(), result, average='weighted')  # ク
                 
-                f1 = f1_score(y, y_pred, average='macro')
-                accuracy = accuracy_score(y, y_pred)
-                recall_macro = recall_score(y, y_pred, average='macro', zero_division=0)
-                recall_micro = recall_score(y, y_pred, average='micro', zero_division=0)
-                recall_weighted = recall_score(y, y_pred, average='weighted', zero_division=0)
+                # f1 = f1_score(y, y_pred, average='macro')
+                # accuracy = accuracy_score(y, y_pred)
+                # recall_macro = recall_score(y, y_pred, average='macro', zero_division=0)
+                # recall_micro = recall_score(y, y_pred, average='micro', zero_division=0)
+                # recall_weighted = recall_score(y, y_pred, average='weighted', zero_division=0)
+
+                f1 = f1_score(y, y_pred_label, average='macro')
+                accuracy = accuracy_score(y, y_pred_label)
+                recall_macro = recall_score(y, y_pred_label, average='macro', zero_division=0)
+                recall_micro = recall_score(y, y_pred_label, average='micro', zero_division=0)
+                recall_weighted = recall_score(y, y_pred_label, average='weighted', zero_division=0)
+
 
 
                 total_ap += ap
@@ -237,16 +318,47 @@ def main():
             #     for value in output_list:
             #         file.write(f"{value}")
 
-            with open('test_lstm_original_predictions.json', 'w') as file:
-                json.dump(y_preds_original, file, indent=4)
+            # with open('test_lstm_original_predictions.json', 'w') as file:
+            #     json.dump(y_preds_original, file, indent=4)
             
-            with open('test_lstm_predictions.json', 'w') as file:
+            # with open('test_lstm_predictions.json', 'w') as file:
+            #     json.dump(preds_dict, file, indent=4)
+
+            with open(os.path.join(output_dir, 'test_original_predictions.json'), 'w') as file:
+                json.dump(y_preds_original, file, indent=4)
+
+            with open(os.path.join(output_dir, 'test_predictions.json'), 'w') as file:
                 json.dump(preds_dict, file, indent=4)
+
                 
             
             logger.info(
                 f"test Loss {test_loss / len(test_loader)}, AP {total_ap / len(test_loader)},f1 {total_f1 / len(test_loader)}, accuracy {total_accuracy / len(test_loader)}, recall macro {total_recall_macro / len(test_loader)}, recall micro {total_recall_micro / len(test_loader)}, recall wighted {total_recall_weighted / len(test_loader)}"
             )
+
+
+    with open(os.path.join(output_dir, "original_logits.json"), "w") as f:
+        json.dump(y_preds_original, f, indent=4)
+
+    with open(os.path.join(output_dir, "normalized_predictions.json"), "w") as f:
+        json.dump(normalized_preds_dict, f, indent=4)
+
+    with open(os.path.join(output_dir, "predicted_labels.json"), "w") as f:
+        json.dump(preds_dict, f, indent=4)
+
+    with open(os.path.join(output_dir, "ground_truth.json"), "w") as f:
+        json.dump(gt_dict, f, indent=4)
+
+    for video_name in y_preds_original.keys():
+        plot_prediction_graph(
+            video_name,
+            y_preds_original[video_name],  # logits
+            gt_dict[video_name],
+            output_dir=output_dir,
+            classes=["none", "pitch", "pick_off"]  # or config.event_classes
+        )
+
+
 
     #labeled_output_dir = os.path.join(args.output_dir, "labels")
     #os.makedirs(labeled_output_dir, exist_ok=True)

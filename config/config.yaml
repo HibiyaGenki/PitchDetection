@@ -4,9 +4,10 @@ seed: 0
 
 model:
     cnn: "i3d"
+    sequence_model: asformer
     train_entire_cnn: True
     in_channel: 1024
-    n_features: 256
+    n_features: 128
     n_classes: 2
     n_stages: 4
     n_layers: 10
@@ -19,7 +20,7 @@ dataset:
 
 training:
     epochs: 100
-    batch_size: 2
+    batch_size: 1
     num_workers: 4
     step_size: 4
     gamma: 0.8
